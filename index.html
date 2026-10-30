@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İngilizce Seviye Merdiveni</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <div class="brand">
+    <h1>İngilizce Seviye Merdiveni</h1>
+    <span id="brandStep">Başlangıç</span>
+  </div>
+
+  <div id="ladderWrap" class="ladder-wrap" style="display:none;">
+    <div class="ladder-col">
+      <div class="ladder" id="ladderBar"></div>
+      <div class="ladder-labels" id="ladderLabels"></div>
+    </div>
+  </div>
+
+  <!-- START -->
+  <section class="screen active" id="screen-start">
+    <div class="hero">
+      <h2>İngilizce seviyeni ölç,<br>tam sana göre çalışmaya başla.</h2>
+      <p>20 soruluk kısa bir sınavla A1'den C1'e kadar seviyeni belirliyoruz. Ardından, tıpkı bir öğretmen gibi seviyene uygun sorular soran ve cevaplarını anında değerlendiren bir çalışma ekranına geçiyorsun.</p>
+    </div>
+    <div class="meta-row">
+      <div><strong>20</strong>Soru</div>
+      <div><strong>~10 dk</strong>Süre</div>
+      <div><strong>A1–C1</strong>Seviye aralığı</div>
+    </div>
+    <button class="btn" onclick="startQuiz()">Teste Başla</button>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="screen" id="screen-quiz">
+    <div class="quiz-top">
+      <span id="quizProgress">Soru 1/20</span>
+      <span id="quizScoreHint"></span>
+    </div>
+    <div class="card">
+      <span class="tag" id="quizTag">Dilbilgisi</span>
+      <p class="qtext" id="quizText"></p>
+      <div class="options" id="quizOptions"></div>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section class="screen" id="screen-result">
+    <div class="result-top">
+      <div class="badge" id="resultBadge">B1</div>
+      <div>
+        <h2 id="resultTitle">Orta Seviye</h2>
+        <p id="resultSub">20 sorudan 0 doğru</p>
+      </div>
+    </div>
+    <div class="stat-grid" id="resultStats"></div>
+    <div class="desc-box" id="resultDesc"></div>
+    <button class="btn" onclick="startPractice()">Bu Seviyede Çalışmaya Başla</button>
+    <button class="btn ghost" onclick="restartAll()" style="margin-left:10px;">Testi Tekrarla</button>
+  </section>
+
+  <!-- PRACTICE -->
+  <section class="screen" id="screen-practice">
+    <div class="practice-head">
+      <h2>Çalışma Odası</h2>
+      <div class="session-stat">
+        Ortalama puan<br><b id="sessAvg">–</b>
+      </div>
+    </div>
+    <div id="practiceLog"></div>
+    <div class="input-row">
+      <textarea id="answerBox" placeholder="Cevabını buraya İngilizce olarak yaz..."></textarea>
+    </div>
+    <div class="footer-actions">
+      <button class="btn" onclick="submitAnswer()">Gönder</button>
+      <button class="btn ghost" onclick="endSession()">Oturumu Bitir</button>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
